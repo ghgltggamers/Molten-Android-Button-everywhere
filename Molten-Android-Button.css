@@ -1,0 +1,23 @@
+button {
+  position: relative;
+  overflow: hidden;
+  --ripple-color: rgba(0, 0, 0, 0.5); /* Default ripple color */
+  user-select: none;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-animation 900ms linear;
+  background-color: var(--ripple-color);
+  box-shadow: 0 0 30px 30px var(--ripple-color);
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
